@@ -4,7 +4,7 @@
 <generator uri="https://github.com/jekyll/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://foxsofter.github.io/feed.xml" />
 <link rel="alternate" type="text/html" href="http://foxsofter.github.io" />
-<updated>2015-08-17T17:21:01+08:00</updated>
+<updated>2015-08-17T17:23:28+08:00</updated>
 <id>http://foxsofter.github.io/</id>
 <author>
   <name>稻子</name>
@@ -118,7 +118,7 @@
  @end
 &lt;/code&gt;
 
-使用事例
+使用例子
 
 &lt;pre&gt;&lt;code&gt;
 //
