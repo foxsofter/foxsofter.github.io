@@ -157,47 +157,39 @@
       <div class="entry-content">
         <p>上代码吧</p>
 
-<p><code>
+<pre><code>
 //
 //  NSObject+AssociatedObject.h
 //  FXCategories
 //
 //  Created by fox softer on 15/2/23.
 //  Copyright (c) 2015年 foxsofter. All rights reserved.
-//</code></p>
+//
 
-<h1 id="import-foundationfoundationh">import &lt;Foundation/Foundation.h&gt;</h1>
+#import &lt;Foundation/Foundation.h&gt;
 
-<p>/**
+/**
  *  @author foxsofter, 15-02-23 21:02:44
  *
  *  @brief  添加属性到对象
  */
-@interface NSObject (AssociatedObject)</p>
+@interface NSObject (AssociatedObject)
 
-<ul>
-  <li>
-    <p>(id)object:(SEL)key;</p>
-  </li>
-  <li>
-    <p>(void)setAssignObject:(id)object withKey:(SEL)key;</p>
-  </li>
-  <li>
-    <p>(void)setRetainNonatomicObject:(id)object withKey:(SEL)key;</p>
-  </li>
-  <li>
-    <p>(void)setCopyNonatomicObject:(id)object withKey:(SEL)key;</p>
-  </li>
-  <li>
-    <p>(void)setRetainObject:(id)object withKey:(SEL)key;</p>
-  </li>
-  <li>
-    <p>(void)setCopyObject:(id)object withKey:(SEL)key;</p>
-  </li>
-</ul>
+- (id)object:(SEL)key;
 
-<p>@end
-&lt;/code&gt;</p>
+- (void)setAssignObject:(id)object withKey:(SEL)key;
+
+- (void)setRetainNonatomicObject:(id)object withKey:(SEL)key;
+
+- (void)setCopyNonatomicObject:(id)object withKey:(SEL)key;
+
+- (void)setRetainObject:(id)object withKey:(SEL)key;
+
+- (void)setCopyObject:(id)object withKey:(SEL)key;
+
+@end
+</code>
+</pre>
 
         
       </div><!-- /.entry-content -->
