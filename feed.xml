@@ -4,7 +4,7 @@
 <generator uri="https://github.com/jekyll/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://foxsofter.github.io/feed.xml" />
 <link rel="alternate" type="text/html" href="http://foxsofter.github.io" />
-<updated>2015-08-17T17:11:59+08:00</updated>
+<updated>2015-08-17T17:21:01+08:00</updated>
 <id>http://foxsofter.github.io/</id>
 <author>
   <name>稻子</name>
@@ -28,21 +28,28 @@
   </author>
   <content type="html">
     &lt;blockquote&gt;
-  &lt;p&gt;以大多数人的努力程度之低，根本轮不到拼天赋
-———— 最近被这句话刺激挺深的，来自知乎。&lt;/p&gt;
+  &lt;p&gt;以大多数人的努力程度之低，根本轮不到拼天赋&lt;/p&gt;
 &lt;/blockquote&gt;
 
+&lt;p&gt;———— 最近被这句话刺激挺深的，来自知乎。&lt;/p&gt;
+
 &lt;h3 id=&quot;section&quot;&gt;任何事情只要坚持，总会有所收获&lt;/h3&gt;
+
 &lt;p&gt;作为一个软件开发者，我确实是太懒了，一直没有认真写过一篇博客。刚开始工作的时候觉得没时间，慢慢的又觉得
 自己写得不好，不想误人子弟，所以一直没有去坚持。此前在csdn上陆陆续续写过一些文章，很多都是草稿的状态，很
 多是不敢发布，想来想去总是不好。现在想想是有些过于迂了，回想自己这么多年，从互联网上获取知识的过程，其实
 就是一个获取对自己有价值信息的过程，会根据自我的情形过滤掉无价值信息，所以也不存在误人子弟咯，当然想我这样
-要能写出来误人子弟的东西来也挺难的。
-### 写博客有很多好处，却没有明显的坏处
-  &lt;a href=&quot;http://mindhacks.cn/2009/02/15/why-you-should-start-blogging-now/&quot;&gt;为什么你应该（从现在开始就）写博客&lt;/a&gt;，
+要能写出来误人子弟的东西来也挺难的。&lt;/p&gt;
+
+&lt;h3 id=&quot;section-1&quot;&gt;写博客有很多好处，却没有明显的坏处&lt;/h3&gt;
+
+&lt;p&gt;&lt;a href=&quot;http://mindhacks.cn/2009/02/15/why-you-should-start-blogging-now/&quot;&gt;为什么你应该（从现在开始就）写博客&lt;/a&gt;，
 这篇博客是刘未鹏写的，牛人只能膜拜，有些思想无法完全理解。但是总能写到人的心里去，很多我们有过的潜意识的东西
-都能理清楚，说明白。
-&amp;gt;让你自己成为一个持续学习和思考的人，并只写你真正思考和总结之后的产物，其他一切就会随之而来。&lt;/p&gt;
+都能理清楚，说明白。&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;让你自己成为一个持续学习和思考的人，并只写你真正思考和总结之后的产物，其他一切就会随之而来。&lt;/p&gt;
+&lt;/blockquote&gt;
 
     &lt;p&gt;&lt;a href=&quot;http://foxsofter.github.io/life/begin/&quot;&gt;今天开始写博客&lt;/a&gt; was originally published by 稻子 at &lt;a href=&quot;http://foxsofter.github.io&quot;&gt;稻子&lt;/a&gt; on October 11, 2015.&lt;/p&gt;
   </content>
@@ -82,23 +89,129 @@
  *
  *  @brief  添加属性到对象
  */
-@interface NSObject (AssociatedObject)
+ @implementation NSObject (AssociatedObject)
 
-- (id)object:(SEL)key;
+ - (id)object:(SEL)key {
+   return objc_getAssociatedObject(self, key);
+ }
 
-- (void)setAssignObject:(id)object withKey:(SEL)key;
+ - (void)setAssignObject:(id)object withKey:(SEL)key {
+   objc_setAssociatedObject(self, key, object, OBJC_ASSOCIATION_ASSIGN);
+ }
 
-- (void)setRetainNonatomicObject:(id)object withKey:(SEL)key;
+ - (void)setRetainNonatomicObject:(id)object withKey:(SEL)key {
+   objc_setAssociatedObject(self, key, object, OBJC_ASSOCIATION_RETAIN_NONATOMIC);
+ }
 
-- (void)setCopyNonatomicObject:(id)object withKey:(SEL)key;
+ - (void)setCopyNonatomicObject:(id)object withKey:(SEL)key {
+   objc_setAssociatedObject(self, key, object, OBJC_ASSOCIATION_COPY_NONATOMIC);
+ }
 
-- (void)setRetainObject:(id)object withKey:(SEL)key;
+ - (void)setRetainObject:(id)object withKey:(SEL)key {
+   objc_setAssociatedObject(self, key, object, OBJC_ASSOCIATION_COPY_NONATOMIC);
+ }
 
-- (void)setCopyObject:(id)object withKey:(SEL)key;
+ - (void)setCopyObject:(id)object withKey:(SEL)key {
+   objc_setAssociatedObject(self, key, object, OBJC_ASSOCIATION_COPY_NONATOMIC);
+ }
+
+ @end
+&lt;/code&gt;
+
+使用事例
+
+&lt;pre&gt;&lt;code&gt;
+//
+//  UIControl+Block.m
+//  WisdomAir
+//
+//  Created by fox softer on 15/2/23.
+//  Copyright (c) 2015年 foxsofter. All rights reserved.
+//
+
+
+@interface UIControl (Block)
+
+- (void)touchDown:(void (^)(void))eventBlock;
+- (void)touchDownRepeat:(void (^)(void))eventBlock;
+- (void)touchDragInside:(void (^)(void))eventBlock;
+- (void)touchDragOutside:(void (^)(void))eventBlock;
+- (void)touchDragEnter:(void (^)(void))eventBlock;
+- (void)touchDragExit:(void (^)(void))eventBlock;
+- (void)touchUpInside:(void (^)(void))eventBlock;
+- (void)touchUpOutside:(void (^)(void))eventBlock;
+- (void)touchCancel:(void (^)(void))eventBlock;
+- (void)valueChanged:(void (^)(void))eventBlock;
+- (void)editingDidBegin:(void (^)(void))eventBlock;
+- (void)editingChanged:(void (^)(void))eventBlock;
+- (void)editingDidEnd:(void (^)(void))eventBlock;
+- (void)editingDidEndOnExit:(void (^)(void))eventBlock;
+
+@end
+
+#import &quot;UIControl+Block.h&quot;
+
+// UIControlEventTouchDown           = 1 &amp;lt;&amp;lt;  0,      // on all touch downs
+// UIControlEventTouchDownRepeat     = 1 &amp;lt;&amp;lt;  1,      // on multiple touchdowns (tap count &amp;gt; 1)
+// UIControlEventTouchDragInside     = 1 &amp;lt;&amp;lt;  2,
+// UIControlEventTouchDragOutside    = 1 &amp;lt;&amp;lt;  3,
+// UIControlEventTouchDragEnter      = 1 &amp;lt;&amp;lt;  4,
+// UIControlEventTouchDragExit       = 1 &amp;lt;&amp;lt;  5,
+// UIControlEventTouchUpInside       = 1 &amp;lt;&amp;lt;  6,
+// UIControlEventTouchUpOutside      = 1 &amp;lt;&amp;lt;  7,
+// UIControlEventTouchCancel         = 1 &amp;lt;&amp;lt;  8,
+//
+// UIControlEventValueChanged        = 1 &amp;lt;&amp;lt; 12,     // sliders, etc.
+//
+// UIControlEventEditingDidBegin     = 1 &amp;lt;&amp;lt; 16,     // UITextField
+// UIControlEventEditingChanged      = 1 &amp;lt;&amp;lt; 17,
+// UIControlEventEditingDidEnd       = 1 &amp;lt;&amp;lt; 18,
+// UIControlEventEditingDidEndOnExit = 1 &amp;lt;&amp;lt; 19,     // &#39;return key&#39; ending editing
+//
+// UIControlEventAllTouchEvents      = 0x00000FFF,  // for touch events
+// UIControlEventAllEditingEvents    = 0x000F0000,  // for UITextField
+// UIControlEventApplicationReserved = 0x0F000000,  // range available for application use
+// UIControlEventSystemReserved      = 0xF0000000,  // range reserved for internal framework use
+// UIControlEventAllEvents           = 0xFFFFFFFF
+
+#define UICONTROLEVENT(methodName, eventName)                                                      \
+  -(void)methodName : (void (^)(void))eventBlock {                                                 \
+    [self setCopyNonatomicObject:eventBlock withKey:@selector(methodName:)];                       \
+    [self addTarget:self                                                                           \
+                  action:@selector(methodName##Action:)                                            \
+        forControlEvents:UIControlEvent##eventName];                                               \
+  }                                                                                                \
+  -(void)methodName##Action : (id)sender {                                                         \
+    void (^block)() = [self object:@selector(methodName:)];                                        \
+    if (block) {                                                                                   \
+      block();                                                                                     \
+    }                                                                                              \
+  }
+
+@interface UIControl ()
+
+@end
+
+@implementation UIControl (Block)
+
+UICONTROLEVENT(touchDown, TouchDown)
+UICONTROLEVENT(touchDownRepeat, TouchDownRepeat)
+UICONTROLEVENT(touchDragInside, TouchDragInside)
+UICONTROLEVENT(touchDragOutside, TouchDragOutside)
+UICONTROLEVENT(touchDragEnter, TouchDragEnter)
+UICONTROLEVENT(touchDragExit, TouchDragExit)
+UICONTROLEVENT(touchUpInside, TouchUpInside)
+UICONTROLEVENT(touchUpOutside, TouchUpOutside)
+UICONTROLEVENT(touchCancel, TouchCancel)
+UICONTROLEVENT(valueChanged, ValueChanged)
+UICONTROLEVENT(editingDidBegin, EditingDidBegin)
+UICONTROLEVENT(editingChanged, EditingChanged)
+UICONTROLEVENT(editingDidEnd, EditingDidEnd)
+UICONTROLEVENT(editingDidEndOnExit, EditingDidEndOnExit)
 
 @end
 &lt;/code&gt;
-&lt;/pre&gt;
+&lt;/pre&gt;&lt;/pre&gt;
 
     &lt;p&gt;&lt;a href=&quot;http://foxsofter.github.io/articles/objc-associatedobject/&quot;&gt;Objective c动态添加属性&lt;/a&gt; was originally published by 稻子 at &lt;a href=&quot;http://foxsofter.github.io&quot;&gt;稻子&lt;/a&gt; on October 11, 2015.&lt;/p&gt;
   </content>
