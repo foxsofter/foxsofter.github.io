@@ -5,15 +5,15 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
 <head>
 <meta charset="utf-8">
-<title>最近更新 &#8211; 稻子</title>
-<meta name="description" content="">
+<title>Objective c动态添加属性 &#8211; 稻子</title>
+<meta name="description" content="可能是Objective c动态添加属性最简单最好的方式了">
+<meta name="keywords" content="objective c">
 
-
-
+  
 
 <!-- Twitter Cards -->
-<meta name="twitter:title" content="最近更新">
-<meta name="twitter:description" content="">
+<meta name="twitter:title" content="Objective c动态添加属性">
+<meta name="twitter:description" content="可能是Objective c动态添加属性最简单最好的方式了">
 <meta name="twitter:site" content="@foxsofter">
 <meta name="twitter:creator" content="@foxsofter">
 
@@ -23,16 +23,16 @@
 <!-- Open Graph -->
 <meta property="og:locale" content="zh_CN">
 <meta property="og:type" content="article">
-<meta property="og:title" content="最近更新">
-<meta property="og:description" content="">
-<meta property="og:url" content="http://foxsofter.github.io/">
+<meta property="og:title" content="Objective c动态添加属性">
+<meta property="og:description" content="可能是Objective c动态添加属性最简单最好的方式了">
+<meta property="og:url" content="http://foxsofter.github.io/articles/objc-associatedobject/">
 <meta property="og:site_name" content="稻子">
 
 
 
 
 
-<link rel="canonical" href="http://foxsofter.github.io/">
+<link rel="canonical" href="http://foxsofter.github.io/articles/objc-associatedobject/">
 <link href="http://foxsofter.github.io/feed.xml" type="application/atom+xml" rel="alternate" title="稻子 Feed">
 
 <!-- https://t.co/dKP3o1e -->
@@ -77,7 +77,7 @@
 
 </head>
 
-<body id="page">
+<body id="post">
 
 <div class="navigation-wrapper">
 	<nav role="navigation" id="site-nav" class="animated drop">
@@ -123,23 +123,91 @@
 
 
 <div id="main" role="main">
-  <article class="entry">
+  <article class="hentry">
     
     <div class="entry-wrapper">
       <header class="entry-header">
-        <h1 class="entry-title">最近更新</h1>
+        <span class="entry-tags"><a href="http://foxsofter.github.io/tags/#objective c" title="Pages tagged objective c">objective c</a></span>
+        
+          <h1 class="entry-title">Objective c动态添加属性</h1>
+        
       </header>
+      <footer class="entry-meta">
+        
+          
+        
+          <img src="http://foxsofter.github.io/images/bio-photo-2.jpg" class="bio-photo" alt="稻子 bio photo"></a>
+        
+        <span class="author vcard">By <span class="fn">稻子</span></span>
+        <span class="entry-date date published"><time datetime="2015-10-11T00:00:00+08:00"><i class="fa fa-calendar-o"></i> October 11, 2015</time></span>
+        <span class="entry-date date modified"><time datetime="2013-05-31"><i class="fa fa-pencil"></i> May 31, 2013</time></span>
+        
+        <span class="social-share-twitter">
+  <a href="https://twitter.com/intent/tweet?hashtags=objectivec&amp;text=Objective%20c动态添加属性&amp;url=http://foxsofter.github.io/articles/objc-associatedobject/&amp;via=foxsofter" title="Share on Twitter" itemprop="Twitter"><i class="fa fa-twitter-square"></i> Tweet</a>
+</span>
+<span class="social-share-facebook">
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http://foxsofter.github.io/articles/objc-associatedobject/" title="Share on Facebook" itemprop="Facebook"><i class="fa fa-facebook-square"></i> Like</a>
+</span>
+<span class="social-share-googleplus">
+  <a href="https://plus.google.com/share?url=http://foxsofter.github.io/articles/objc-associatedobject/" title="Share on Google Plus" itemprop="GooglePlus"><i class="fa fa-google-plus-square"></i> +1</a>
+</span>
+<!-- /.social-share -->
+        
+      </footer>
       <div class="entry-content">
-        <ul class="post-list">
+        <p>上代码吧</p>
 
-  <li><article><a href="http://foxsofter.github.io/life/begin/">今天开始写博客 <span class="entry-date"><time datetime="2015-10-11T03:39:55+08:00">October 11, 2015</time></span></a></article></li>
+<p><code>
+//
+//  NSObject+AssociatedObject.h
+//  FXCategories
+//
+//  Created by fox softer on 15/2/23.
+//  Copyright (c) 2015年 foxsofter. All rights reserved.
+//</code></p>
 
-  <li><article><a href="http://foxsofter.github.io/articles/objc-associatedobject/">Objective c动态添加属性 <span class="entry-date"><time datetime="2015-10-11T00:00:00+08:00">October 11, 2015</time></span> <span class="excerpt">可能是Objective c动态添加属性最简单最好的方式了</span></a></article></li>
+<h1 id="import-foundationfoundationh">import &lt;Foundation/Foundation.h&gt;</h1>
 
+<p>/**
+ *  @author foxsofter, 15-02-23 21:02:44
+ *
+ *  @brief  添加属性到对象
+ */
+@interface NSObject (AssociatedObject)</p>
+
+<ul>
+  <li>
+    <p>(id)object:(SEL)key;</p>
+  </li>
+  <li>
+    <p>(void)setAssignObject:(id)object withKey:(SEL)key;</p>
+  </li>
+  <li>
+    <p>(void)setRetainNonatomicObject:(id)object withKey:(SEL)key;</p>
+  </li>
+  <li>
+    <p>(void)setCopyNonatomicObject:(id)object withKey:(SEL)key;</p>
+  </li>
+  <li>
+    <p>(void)setRetainObject:(id)object withKey:(SEL)key;</p>
+  </li>
+  <li>
+    <p>(void)setCopyObject:(id)object withKey:(SEL)key;</p>
+  </li>
 </ul>
 
+<p>@end
+&lt;/code&gt;</p>
+
+        
       </div><!-- /.entry-content -->
     </div><!-- /.entry-wrapper -->
+    <nav class="pagination" role="navigation">
+      
+      
+        <a href="http://foxsofter.github.io/life/begin/" class="btn" title="今天开始写博客">Next</a>
+      
+    </nav><!-- /.pagination -->
   </article>
 </div><!-- /#main -->
 

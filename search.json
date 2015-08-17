@@ -8,6 +8,14 @@
     }
   
 
+  
+    ,{
+      "title"			: "Objective c动态添加属性",
+      "link"			: "http://foxsofter.github.io/articles/objc-associatedobject/",
+      "excerpt"		: "可能是Objective c动态添加属性最简单最好的方式了"
+    }
+  
+
 
 
   
