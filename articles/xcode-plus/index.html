@@ -5,15 +5,15 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
 <head>
 <meta charset="utf-8">
-<title>今天开始写博客 &#8211; 稻子</title>
+<title>xcode插件管理 &#8211; 稻子</title>
+<meta name="description" content="一些实用的xcode插件及其安装方式">
+<meta name="keywords" content="objective c">
 
-<meta name="keywords" content="">
-
-
+  
 
 <!-- Twitter Cards -->
-<meta name="twitter:title" content="今天开始写博客">
-
+<meta name="twitter:title" content="xcode插件管理">
+<meta name="twitter:description" content="一些实用的xcode插件及其安装方式">
 <meta name="twitter:site" content="@foxsofter">
 <meta name="twitter:creator" content="@foxsofter">
 
@@ -23,16 +23,16 @@
 <!-- Open Graph -->
 <meta property="og:locale" content="zh_CN">
 <meta property="og:type" content="article">
-<meta property="og:title" content="今天开始写博客">
-
-<meta property="og:url" content="http://foxsofter.github.io/life/begin/">
+<meta property="og:title" content="xcode插件管理">
+<meta property="og:description" content="一些实用的xcode插件及其安装方式">
+<meta property="og:url" content="http://foxsofter.github.io/articles/xcode-plus/">
 <meta property="og:site_name" content="稻子">
 
 
 
 
 
-<link rel="canonical" href="http://foxsofter.github.io/life/begin/">
+<link rel="canonical" href="http://foxsofter.github.io/articles/xcode-plus/">
 <link href="http://foxsofter.github.io/feed.xml" type="application/atom+xml" rel="alternate" title="稻子 Feed">
 
 <!-- https://t.co/dKP3o1e -->
@@ -127,56 +127,80 @@
     
     <div class="entry-wrapper">
       <header class="entry-header">
-        <span class="entry-tags"></span>
+        <span class="entry-tags"><a href="http://foxsofter.github.io/tags/#objective c" title="Pages tagged objective c">objective c</a></span>
         
-          <h1 class="entry-title">今天开始写博客</h1>
+          <h1 class="entry-title">xcode插件管理</h1>
         
       </header>
       <footer class="entry-meta">
         
+          
         
-        
-          <img src="http://foxsofter.github.io/images/bio-photo.jpg" class="bio-photo" alt="稻子 bio photo"></a>
+          <img src="http://foxsofter.github.io/images/bio-photo-2.jpg" class="bio-photo" alt="稻子 bio photo"></a>
         
         <span class="author vcard">By <span class="fn">稻子</span></span>
-        <span class="entry-date date published"><time datetime="2015-10-11T03:39:55+08:00"><i class="fa fa-calendar-o"></i> October 11, 2015</time></span>
+        <span class="entry-date date published"><time datetime="2015-10-11T00:00:00+08:00"><i class="fa fa-calendar-o"></i> October 11, 2015</time></span>
+        <span class="entry-date date modified"><time datetime="2013-05-31"><i class="fa fa-pencil"></i> May 31, 2013</time></span>
         
-        
-        
+        <span class="social-share-twitter">
+  <a href="https://twitter.com/intent/tweet?hashtags=objectivec&amp;text=xcode插件管理&amp;url=http://foxsofter.github.io/articles/xcode-plus/&amp;via=foxsofter" title="Share on Twitter" itemprop="Twitter"><i class="fa fa-twitter-square"></i> Tweet</a>
+</span>
+<span class="social-share-facebook">
+  <a href="https://www.facebook.com/sharer/sharer.php?u=http://foxsofter.github.io/articles/xcode-plus/" title="Share on Facebook" itemprop="Facebook"><i class="fa fa-facebook-square"></i> Like</a>
+</span>
+<span class="social-share-googleplus">
+  <a href="https://plus.google.com/share?url=http://foxsofter.github.io/articles/xcode-plus/" title="Share on Google Plus" itemprop="GooglePlus"><i class="fa fa-google-plus-square"></i> +1</a>
+</span>
+<!-- /.social-share -->
         
       </footer>
       <div class="entry-content">
-        <blockquote>
-  <p>以大多数人的努力程度之低，根本轮不到拼天赋</p>
-</blockquote>
+        <h4 id="alcatrazhttpalcatrazio"><a href="http://alcatraz.io">包管理插件alcatraz</a></h4>
 
-<p>———— 最近被这句话刺激挺深的，来自知乎。</p>
+<p>Install
+Paste this into your terminal:</p>
 
-<h3 id="section">任何事情只要坚持，总会有所收获</h3>
+<p>curl -fsSL https://raw.github.com/supermarin/Alcatraz/master/Scripts/install.sh | sh
+Alcatraz is available for OSX 10.9 and Xcode 5+ only.</p>
 
-<p>作为一个软件开发者，我确实是太懒了，一直没有认真写过一篇博客。刚开始工作的时候觉得没时间，慢慢的又觉得
-自己写得不好，不想误人子弟，所以一直没有去坚持。此前在csdn上陆陆续续写过一些文章，很多都是草稿的状态，很
-多是不敢发布，想来想去总是不好。现在想想是有些过于迂了，回想自己这么多年，从互联网上获取知识的过程，其实
-就是一个获取对自己有价值信息的过程，会根据自我的情形过滤掉无价值信息，所以也不存在误人子弟咯，当然想我这样
-要能写出来误人子弟的东西来也挺难的。</p>
+<p>Uninstall
+Delete the plugin:</p>
 
-<h3 id="section-1">写博客有很多好处，却没有明显的坏处</h3>
+<p>rm -rf ~/Library/Application\ Support/Developer/Shared/Xcode/Plug-ins/Alcatraz.xcplugin
+Remove all cached data:
+rm -rf ~/Library/Application\ Support/Alcatraz
+装了这个之后可以搜索并安装下面这些插件。</p>
 
-<p><a href="http://mindhacks.cn/2009/02/15/why-you-should-start-blogging-now/">为什么你应该（从现在开始就）写博客</a>，
-这篇博客是刘未鹏写的，牛人只能膜拜，有些思想无法完全理解。但是总能写到人的心里去，很多我们有过的潜意识的东西
-都能理清楚，说明白。</p>
+<h4 id="accodesnippetrepositoryplugin">ACCodeSnippetRepositoryPlugin</h4>
 
-<blockquote>
-  <p>让你自己成为一个持续学习和思考的人，并只写你真正思考和总结之后的产物，其他一切就会随之而来。</p>
-</blockquote>
+<p>codesnippet插件</p>
+
+<h4 id="backlight">backlight</h4>
+
+<p>高亮当前行</p>
+
+<h4 id="gitdiff">GitDiff</h4>
+
+<h4 id="fuzzyautocomplete">FuzzyAutocomplete</h4>
+
+<p>自动补全</p>
+
+<h4 id="cocoapodshttpcocoapodsorg"><a href="http://cocoapods.org/">CocoaPods</a></h4>
+
+<p>安装CocoaPods
+sudo gem install cocoapods
+如果墙的存在，可以参考这个地址安装
+http://code4app.com/article/cocoapods-install-usage</p>
 
         
       </div><!-- /.entry-content -->
     </div><!-- /.entry-wrapper -->
     <nav class="pagination" role="navigation">
       
-        <a href="http://foxsofter.github.io/articles/xcode-plus/" class="btn" title="xcode插件管理">Previous</a>
+        <a href="http://foxsofter.github.io/articles/objc-associatedobject/" class="btn" title="Objective c动态添加属性">Previous</a>
       
+      
+        <a href="http://foxsofter.github.io/life/begin/" class="btn" title="今天开始写博客">Next</a>
       
     </nav><!-- /.pagination -->
   </article>

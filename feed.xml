@@ -4,7 +4,7 @@
 <generator uri="https://github.com/jekyll/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="http://foxsofter.github.io/feed.xml" />
 <link rel="alternate" type="text/html" href="http://foxsofter.github.io" />
-<updated>2015-08-17T17:25:25+08:00</updated>
+<updated>2015-08-18T09:31:51+08:00</updated>
 <id>http://foxsofter.github.io/</id>
 <author>
   <name>稻子</name>
@@ -52,6 +52,63 @@
 &lt;/blockquote&gt;
 
     &lt;p&gt;&lt;a href=&quot;http://foxsofter.github.io/life/begin/&quot;&gt;今天开始写博客&lt;/a&gt; was originally published by 稻子 at &lt;a href=&quot;http://foxsofter.github.io&quot;&gt;稻子&lt;/a&gt; on October 11, 2015.&lt;/p&gt;
+  </content>
+</entry>
+
+
+  
+
+<entry>
+  <title type="html"><![CDATA[xcode插件管理]]></title>
+  <link rel="alternate" type="text/html" href="http://foxsofter.github.io/articles/xcode-plus/" />
+  <id>http://foxsofter.github.io/articles/xcode-plus</id>
+  <updated>2013-05-31T00:00:00-00:00</updated>
+  <published>2015-10-11T00:00:00+08:00</published>
+  
+  <author>
+    <name>稻子</name>
+    <uri>http://foxsofter.github.io</uri>
+    <email>foxsofter@gmail.com</email>
+  </author>
+  <content type="html">
+    &lt;h4 id=&quot;alcatrazhttpalcatrazio&quot;&gt;&lt;a href=&quot;http://alcatraz.io&quot;&gt;包管理插件alcatraz&lt;/a&gt;&lt;/h4&gt;
+
+&lt;p&gt;Install
+Paste this into your terminal:&lt;/p&gt;
+
+&lt;p&gt;curl -fsSL https://raw.github.com/supermarin/Alcatraz/master/Scripts/install.sh | sh
+Alcatraz is available for OSX 10.9 and Xcode 5+ only.&lt;/p&gt;
+
+&lt;p&gt;Uninstall
+Delete the plugin:&lt;/p&gt;
+
+&lt;p&gt;rm -rf ~/Library/Application\ Support/Developer/Shared/Xcode/Plug-ins/Alcatraz.xcplugin
+Remove all cached data:
+rm -rf ~/Library/Application\ Support/Alcatraz
+装了这个之后可以搜索并安装下面这些插件。&lt;/p&gt;
+
+&lt;h4 id=&quot;accodesnippetrepositoryplugin&quot;&gt;ACCodeSnippetRepositoryPlugin&lt;/h4&gt;
+
+&lt;p&gt;codesnippet插件&lt;/p&gt;
+
+&lt;h4 id=&quot;backlight&quot;&gt;backlight&lt;/h4&gt;
+
+&lt;p&gt;高亮当前行&lt;/p&gt;
+
+&lt;h4 id=&quot;gitdiff&quot;&gt;GitDiff&lt;/h4&gt;
+
+&lt;h4 id=&quot;fuzzyautocomplete&quot;&gt;FuzzyAutocomplete&lt;/h4&gt;
+
+&lt;p&gt;自动补全&lt;/p&gt;
+
+&lt;h4 id=&quot;cocoapodshttpcocoapodsorg&quot;&gt;&lt;a href=&quot;http://cocoapods.org/&quot;&gt;CocoaPods&lt;/a&gt;&lt;/h4&gt;
+
+&lt;p&gt;安装CocoaPods
+sudo gem install cocoapods
+如果墙的存在，可以参考这个地址安装
+http://code4app.com/article/cocoapods-install-usage&lt;/p&gt;
+
+    &lt;p&gt;&lt;a href=&quot;http://foxsofter.github.io/articles/xcode-plus/&quot;&gt;xcode插件管理&lt;/a&gt; was originally published by 稻子 at &lt;a href=&quot;http://foxsofter.github.io&quot;&gt;稻子&lt;/a&gt; on October 11, 2015.&lt;/p&gt;
   </content>
 </entry>
 

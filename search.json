@@ -10,6 +10,14 @@
 
   
     ,{
+      "title"			: "xcode插件管理",
+      "link"			: "http://foxsofter.github.io/articles/xcode-plus/",
+      "excerpt"		: "一些实用的xcode插件及其安装方式"
+    }
+  
+
+  
+    ,{
       "title"			: "Objective c动态添加属性",
       "link"			: "http://foxsofter.github.io/articles/objc-associatedobject/",
       "excerpt"		: "可能是Objective c动态添加属性最简单最好的方式了"
