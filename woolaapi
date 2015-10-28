@@ -2,7 +2,7 @@ swagger: '2.0'
 info:
   version: '1.0'
   title: 吾拉接口文档
-host: 127.0.0.1:10010
+host: apitest.yuedong.co
 basePath: /
 #
 schemes:
